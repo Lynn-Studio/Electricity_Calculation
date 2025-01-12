@@ -98,7 +98,7 @@
 <body>
     <div class="container">
         <h1>Bago City's Electricity Downtime Calculator</h1>
-        <label for="downTime">Enter Electric Down Time (12-hour clock before 11:59 AM):</label>
+        <label for="downTime">Enter Electric Down Time (12-hour clock before 11:59 AM) : </label>
         <input type="number" id="downTime" step="0.01" min="0" max="24" required>
 
         <button onclick="calculateElectricityReturn()">Calculate</button>
@@ -118,7 +118,7 @@
 
             for (let i = 0; i < 6; i++) {
                 // Calculate the estimated time electricity will come back
-                let guessElectricComeUp = currentDowntime + 4; // Electricity comes back after 4 hours
+                let guessElectricComeUp = currentDowntime + 5; // Electricity comes back after 4 hours
 
                 // Normalize the time to a 24-hour format
                 if (guessElectricComeUp >= 24) {
@@ -126,7 +126,7 @@
                 }
 
                 // Determine how long the electricity will stay on
-                let electricityDuration = (i === 5) ? 4 : 2; // 4 hours for the 6th cycle, 5 hours for others
+                let electricityDuration = (i === 5) ? 4 : 2; // 4 hours for the 6th cycle, 2 hours for others
 
                 // Calculate when the electricity will go off again
                 let electricityGoesOff = guessElectricComeUp + electricityDuration;
