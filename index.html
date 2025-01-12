@@ -18,9 +18,9 @@
         .container {
             max-width: 500px;
             margin: auto;
-            padding: 30px;
+            padding: 60px;
             border-radius: 12px;
-            background: #ffffff;
+            background: #e9e8e8;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
@@ -43,7 +43,8 @@
             border-radius: 8px;
             font-size: 16px;
             transition: border-color 0.3s;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            margin-right: 10px;
         }
         input[type="number"]:focus {
             border-color: #007bff;
@@ -51,13 +52,14 @@
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
         }
         button {
-            margin-top: 10px;
-            width: 100%;
+            margin-top: 15px;
+            margin-left: 70px;
+            width: 350px;
             padding: 12px;
             background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s, transform 0.2s;
@@ -70,6 +72,8 @@
             transform: translateY(0);
         }
         p {
+            padding-top: 5px;
+            padding: 5px;
             text-align: center;
             font-size: 16px;
             color: #343a40;
@@ -97,7 +101,7 @@
     <div class="container">
         <h1>Bago City's Electricity Downtime Calculator</h1>
         <label for="downTime">Enter Electric Down Time (12-hour clock before 11:59 AM):</label>
-        <input type="number" id="downTime" step="0.01" min="0" max="23.99" required placeholder="e.g., 2.5 for 2 hours 30 minutes">
+        <input type="number" id="downTime" step="0.01" min="0" max="23.99" required placeholder="e.g - for 1 Am  = 13">
 
         <button onclick="calculateElectricityReturn()">Calculate</button>
         <p id="result"></p>
@@ -129,7 +133,7 @@
                 }
 
                 let timeString = `Cycle ${i + 1} : `;
-                timeString += "Coming Up at " + formatTime(guessElectricComeUp) + " after 2 hour, will be going off again at " + formatTime(electricityGoesOff);
+                timeString += "Coming Up - " + formatTime(guessElectricComeUp)+ "." + " After 2 hour, will be going off again at " + formatTime(electricityGoesOff);
                 results.push(timeString);
 
                 currentDowntime = electricityGoesOff; // Next downtime starts when the electricity goes off
